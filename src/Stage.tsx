@@ -390,5 +390,4 @@ export class Stage extends StageBase<InitStateType, ChatStateType, MessageStateT
         return <></>
     }
 
-                                                     }         console.log(`Sending stage directions:\n${stageDirections}`);
-        }
+}
