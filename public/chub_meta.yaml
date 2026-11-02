@@ -2,7 +2,7 @@
 #   in which case these values can be managed in the UI.
 
 # The name of the stage.
-project_name: "Boss Mode"
+project_name: "Boss Mode (No User when imagining)"
 
 # A short tagline to show in search.
 tagline: "Take control with [Boss Mode]."
@@ -79,7 +79,7 @@ which are high-priority instructions that are not directly attributed to the use
 "
 
 # 'PUBLIC', 'PRIVATE', or 'UNLISTED'.
-visibility: 'PUBLIC'
+visibility: 'PRIVATE'
 
 # 'ADJACENT' | 'NONE' | 'COVER' | 'FULLSCREEN'
 # 'ADJACENT' is default. The frame will display on the side of the
