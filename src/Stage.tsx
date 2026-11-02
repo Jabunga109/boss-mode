@@ -6,7 +6,6 @@ import {
     Message,
     AspectRatio,
     Character,
-    User
 } from "@chub-ai/stages-ts";
 import {LoadResponse} from "@chub-ai/stages-ts/dist/types/load";
 import { z } from "zod";
@@ -59,17 +58,14 @@ export class Stage extends StageBase<InitStateType, ChatStateType, MessageStateT
 
     // Unsaved:
     characters: {[key: string]: Character};
-    users: {[key: string]: User};
 
     constructor(data: InitialData<InitStateType, ChatStateType, MessageStateType, ConfigType>) {
         super(data);
         const {
             characters,
-            users,
         } = data;
 
         this.characters = characters;
-        this.users = users;
 
         const {config, messageState} = data;
         this.artStyle = config?.artStyle ?? this.artStyle;
@@ -257,7 +253,6 @@ export class Stage extends StageBase<InitStateType, ChatStateType, MessageStateT
                     `Purpose: The goal of this task is to digest the context and craft descriptive input for an image generator.\n\n` +
                     `Narrative History:{{messages}}\n\n${instruction.length > 0 ? `Essential Image Context to Convey:\n${instruction}\n\n` : ''}` +
                     `${Object.values(this.characters).map(character => `Information about ${character.name}:\n${character.personality}`).join(`\n\n`)}\n\n` +
-                    `${Object.values(this.users).map(user => `Information about ${user.name}:\n${user.chatProfile}`).join(`\n\n`)}\n\n` +
                     `General instruction: {{post_history_instructions}}\n\n` +
                     `Current priority instruction:\nUse this response to synthesize a concise visual description of ${instruction.length > 0 ? `the essential image context` : `the current narrative moment`}. ` +
                     `This system response will be fed directly into an image generator, which is unfamiliar with the names or appearance of characters or settings; ` +
