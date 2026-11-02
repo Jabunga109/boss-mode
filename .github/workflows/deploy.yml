@@ -58,7 +58,7 @@ jobs:
              echo "Secret STAGE_ID does not exist; attempting to read from file"
              STAGE_ID=$(grep '^extension_id:' public/chub_meta.yaml | cut -d ':' -f2 | tr -d " '\"")
              if [ "${STAGE_ID}" == ""  ]; then
-                if ["${{ github.repository }}" == "CharHubAI/stage-template"]; then
+                if [ "${{ github.repository }}" == "CharHubAI/stage-template" ]; then
                   echo "Not making ext id for template project"
                   STAGE_ID="extension-template-5523da8cf7de"
                 else
