@@ -1,9 +1,6 @@
 import {ReactElement} from "react";
 import {
     StageBase,
-    import {ReactElement} from "react";
-import {
-    StageBase,
     StageResponse,
     InitialData,
     Message,
